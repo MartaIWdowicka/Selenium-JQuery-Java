@@ -10,7 +10,7 @@ public class TestBaseClass {
 
     public static void SetUp(){
         //use if chromedriver.exe enviroment variable not set:
-        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\Magnua\\Desktop\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Magnua\\Desktop\\chromedriver.exe");
         driver = new ChromeDriver();
         wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(3000, MILLISECONDS)

@@ -1,4 +1,5 @@
 import com.google.common.collect.ImmutableMap;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +15,7 @@ public class KendoPage extends PageJSExtensions {
             "NamePlatesCount", "return $('svg>g>g>g>g').filter(':has(text)').size()",
             "DiagramLinesCount", "return $('svg>g>g>g>g').not(':has(text)').size()",
             "DiagramLines", "return $('svg>g>g>g>g').not(':has(text)')",
-            "ResizeButton", "return $('svg>g>g:nth-of-type(2)>g:nth-of-type(1)>path:nth-of-type(9)')"
+            "ResizeButton", "return $('svg>g>g:nth-of-type(2)>g:nth-of-type(1)>path:nth-of-type(7)')"
     );
 
     public static void getKendoExampleWebPage(WebDriver driver) {
@@ -31,14 +32,28 @@ public class KendoPage extends PageJSExtensions {
         return KendoSelectors.get(key);
     }
 
+    public static String getBlockLocator(String parameter) {
+        return KendoPage.getSelector("NamePlate", parameter);
+    }
 
-    public static void dragAndDrop(WebDriver driver, WebElement me, WebElement you) {
+    public static void dragAndDrop(WebDriver driver, WebElement draggable, WebElement target) {
         builder = new Actions(driver);
-        builder.click(me)
-                .dragAndDrop(me, you)
+        builder.click(draggable)
+                .dragAndDrop(draggable, target)
                 .release()
                 .build()
                 .perform();
+    }
+
+    public static Dimension resize(WebDriver driver, WebElement element) {
+        builder = new Actions(driver);
+        WebElement resizeButton = PageJSExtensions.getWebElement(driver, KendoPage.getSelector("ResizeButton", ""));
+        builder.click(element)
+                .dragAndDrop(resizeButton, element)
+                .release()
+                .build()
+                .perform();
+        return element.getSize();
     }
 
     public static void deleteElement(WebDriver driver, WebElement me) {
