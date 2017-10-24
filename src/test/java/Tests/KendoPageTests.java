@@ -1,5 +1,9 @@
+package Tests;
+
+import Extensions.TestBaseClass;
+import PageObjects.KendoPage;
+import TestParts.KendoPageTestParts;
 import org.junit.*;
-import org.openqa.selenium.WebElement;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertNotEquals;

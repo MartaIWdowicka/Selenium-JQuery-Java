@@ -1,3 +1,7 @@
+package PageObjects;
+
+import Extensions.PageJSExtensions;
+import Extensions.WaitExtensions;
 import com.google.common.collect.ImmutableMap;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;

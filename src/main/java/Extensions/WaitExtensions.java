@@ -1,3 +1,6 @@
+package Extensions;
+
+import Extensions.PageJSExtensions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;

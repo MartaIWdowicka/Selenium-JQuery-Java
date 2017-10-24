@@ -1,3 +1,7 @@
+package TestParts;
+
+import Extensions.PageJSExtensions;
+import PageObjects.KendoPage;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
