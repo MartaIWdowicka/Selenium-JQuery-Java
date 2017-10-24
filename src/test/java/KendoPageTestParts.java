@@ -23,11 +23,11 @@ public class KendoPageTestParts {
     }
 
     public static void blocksCountMatch(WebDriver driver, String expected) {
-        assertEquals(expected, PageJSExtensions.javascriptExecutor(driver, KendoPage.get("NamePlatesCount")));
+        assertEquals(expected, PageJSExtensions.javascriptExecutor(driver, KendoPage.getSelector("NamePlatesCount")));
     }
 
     public static void linesCountmatch(WebDriver driver, String expected) {
-        assertEquals(expected, PageJSExtensions.javascriptExecutor(driver, KendoPage.get("DiagramLinesCount")));
+        assertEquals(expected, PageJSExtensions.javascriptExecutor(driver, KendoPage.getSelector("DiagramLinesCount")));
     }
 
     public static void copyPasteElementWorks(WebDriver driver, String selectorElementToCopy, String selectorCountElements) {

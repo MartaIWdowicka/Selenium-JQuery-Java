@@ -16,10 +16,10 @@ public class KendoPageTests extends TestBaseClass {
         KendoPage.getKendoExampleWebPage(driver);
         KendoPageTestParts.linesCountmatch(driver, "6");
         KendoPageTestParts.blocksCountMatch(driver, "7");
-        KendoPageTestParts.copyPasteElementWorks(driver, KendoPage.getBlockLocator("Moreno"), KendoPage.get("NamePlatesCount"));
-        KendoPageTestParts.deleteElementWorks(driver, KendoPage.getBlockLocator("Moreno"), KendoPage.get("NamePlatesCount"));
-        KendoPageTestParts.copyPasteElementWorks(driver, KendoPage.getSelector("DiagramLines", ""), KendoPage.get("DiagramLinesCount"));
-        KendoPageTestParts.deleteElementWorks(driver, KendoPage.getSelector("DiagramLines", ""), KendoPage.get("DiagramLinesCount"));
+        KendoPageTestParts.copyPasteElementWorks(driver, KendoPage.getBlockLocator("Moreno"), KendoPage.getSelector("NamePlatesCount"));
+        KendoPageTestParts.deleteElementWorks(driver, KendoPage.getBlockLocator("Moreno"), KendoPage.getSelector("NamePlatesCount"));
+        KendoPageTestParts.copyPasteElementWorks(driver, KendoPage.getSelector("DiagramLine"), KendoPage.getSelector("DiagramLinesCount"));
+        KendoPageTestParts.deleteElementWorks(driver, KendoPage.getSelector("DiagramLine"), KendoPage.getSelector("DiagramLinesCount"));
     }
 
     @Test

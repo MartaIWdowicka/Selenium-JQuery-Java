@@ -14,7 +14,7 @@ public class KendoPage extends PageJSExtensions {
             "NamePlate", "return $('svg').find(\"text:contains('%s')\").parent()",
             "NamePlatesCount", "return $('svg>g>g>g>g').filter(':has(text)').size()",
             "DiagramLinesCount", "return $('svg>g>g>g>g').not(':has(text)').size()",
-            "DiagramLines", "return $('svg>g>g>g>g').not(':has(text)')",
+            "DiagramLine", "return $('svg>g>g>g>g').not(':has(text)')",
             "ResizeButton", "return $('svg>g>g:nth-of-type(2)>g:nth-of-type(1)>path:nth-of-type(7)')"
     );
 
@@ -28,7 +28,7 @@ public class KendoPage extends PageJSExtensions {
         return String.format(KendoSelectors.get(key), args);
     }
 
-    public static String get(String key) {
+    public static String getSelector(String key) {
         return KendoSelectors.get(key);
     }
 
