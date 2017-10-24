@@ -17,15 +17,4 @@ public class WaitExtensions extends PageJSExtensions {
         pageLoad = new WebDriverWait(driver, 20);
         pageLoad.until(expectation);
     }
-
-    public static void waitElementReady(WebDriver driver, final String selector, int timeout) {
-        waiter = new WebDriverWait(driver, timeout);
-        ExpectedCondition<Boolean> expectation = new
-                ExpectedCondition<Boolean>() {
-                    public Boolean apply(WebDriver driver) {
-                        return getWebElement(driver, selector).isEnabled();
-                    }
-                };
-        waiter.until(expectation);
-    }
 }
