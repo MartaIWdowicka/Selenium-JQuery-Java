@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.Map;
 
-public class KendoPage extends PageJSExtensions {
+public class KendoDemoPage extends PageJSExtensions {
 
     private static Actions builder;
     private static Map<String, String> KendoSelectors = ImmutableMap.of(
@@ -37,7 +37,7 @@ public class KendoPage extends PageJSExtensions {
     }
 
     public static String getBlockLocator(String parameter) {
-        return KendoPage.getSelector("NamePlate", parameter);
+        return KendoDemoPage.getSelector("NamePlate", parameter);
     }
 
     public static void dragAndDrop(WebDriver driver, WebElement draggable, WebElement target) {
@@ -51,7 +51,7 @@ public class KendoPage extends PageJSExtensions {
 
     public static Dimension resize(WebDriver driver, WebElement element) {
         builder = new Actions(driver);
-        WebElement resizeButton = PageJSExtensions.getWebElement(driver, KendoPage.getSelector("ResizeButton", ""));
+        WebElement resizeButton = PageJSExtensions.getWebElement(driver, KendoDemoPage.getSelector("ResizeButton", ""));
         builder.click(element)
                 .dragAndDrop(resizeButton, element)
                 .release()
